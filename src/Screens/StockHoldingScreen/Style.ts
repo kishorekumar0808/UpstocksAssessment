@@ -62,7 +62,11 @@ export const styles = StyleSheet.create({
     width: '100%',
     paddingHorizontal: 16,
   },
-  commonText: {fontWeight: 'bold', color: Colors.primaryBlack},
+  commonText: {
+    fontWeight: 'bold',
+    color: Colors.primaryBlack,
+    fontSize: 16,
+  },
   commonCastContainer: {
     display: 'flex',
     flexDirection: 'row',
@@ -71,5 +75,6 @@ export const styles = StyleSheet.create({
   commonCostText: {
     fontWeight: '400',
     color: Colors.primaryBlack,
+    fontSize: 16,
   },
 });
