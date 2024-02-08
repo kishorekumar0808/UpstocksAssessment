@@ -42,6 +42,8 @@ export const styles = StyleSheet.create({
   rupeeImage: {
     height: 19,
     width: 19,
+    marginTop: 2,
+    marginRight: -3,
   },
 
   customCollapseContainer: {
@@ -49,14 +51,6 @@ export const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'space-around',
     height: height * 0.15,
-  },
-
-  commonCollapseContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%',
-    paddingHorizontal: 16,
-    marginVertical: 5,
   },
 
   bottomProfitLossContainer: {
