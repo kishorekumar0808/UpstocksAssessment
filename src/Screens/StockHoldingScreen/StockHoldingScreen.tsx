@@ -38,7 +38,6 @@ const StockHoldingScreen = () => {
       const response = await axios.get(
         'https://run.mocky.io/v3/bde7230e-bc91-43bc-901d-c79d008bddc8',
       );
-      console.log(response.data);
       if (response.data) {
         setUserHolding(response.data.userHolding);
         setLoading(false);
