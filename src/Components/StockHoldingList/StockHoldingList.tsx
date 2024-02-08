@@ -1,7 +1,8 @@
-import {View, Text, Image} from 'react-native';
+import {View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {StockHoldingListProps} from './Type';
 import {styles} from './Style';
+import RowText from '../RowText/RowText';
 
 const StockHoldingList: React.FC<StockHoldingListProps> = ({
   symbol,
@@ -24,30 +25,15 @@ const StockHoldingList: React.FC<StockHoldingListProps> = ({
   return (
     <View>
       <View style={styles.mainContainer}>
-        <View style={styles.rowContainer}>
-          <Text style={styles.symbol}>{symbol}</Text>
+        <RowText startingText={symbol} prefixText={'LTP:'} endNumber={LTP} />
 
-          <View style={styles.ltpInnerContainer}>
-            <Text style={styles.ltp}>LTP:</Text>
-            <Image
-              source={require('../../Assets/Images/rupee.png')}
-              style={styles.rupeeImage}
-            />
-            <Text style={styles.ltpInnerText}> {LTP}</Text>
-          </View>
-        </View>
-
-        <View style={[styles.rowContainer, styles.customTopMargin]}>
-          <Text style={styles.quantity}>{quantity}</Text>
-
-          <View style={styles.ltpInnerContainer}>
-            <Text style={styles.ltp}>P/L:</Text>
-            <Image
-              source={require('../../Assets/Images/rupee.png')}
-              style={styles.rupeeImage}
-            />
-            <Text style={styles.ltpInnerText}>{individualPNL.toFixed(2)}</Text>
-          </View>
+        <View style={styles.customTopMargin}>
+          <RowText
+            startingText={quantity}
+            prefixText={'P/L:'}
+            isStartingTextBold={false}
+            endNumber={individualPNL.toFixed(2)}
+          />
         </View>
       </View>
       <View style={styles.horizontalLine} />

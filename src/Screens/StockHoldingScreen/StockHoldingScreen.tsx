@@ -19,6 +19,7 @@ import {
   getTotalIndividualValue,
   getTotalPNL,
 } from '../../Assets/Utils/Calculations';
+import RowText from '../../Components/RowText/RowText';
 
 const StockHoldingScreen = () => {
   const [userHolding, setUserHolding] = useState<UserHoldingType[]>([]);
@@ -116,43 +117,27 @@ const StockHoldingScreen = () => {
           {/* collapse container Start */}
           {!collapse && (
             <>
-              <View style={styles.commonCollapseContainer}>
-                <Text style={styles.commonText}>Current Value:</Text>
-                <View style={styles.commonCastContainer}>
-                  <Image
-                    source={require('../../Assets/Images/rupee.png')}
-                    style={styles.rupeeImage}
-                  />
-                  <Text style={styles.commonCostText}>
-                    {collapseValues.totalCurrentValue}
-                  </Text>
-                </View>
-              </View>
+              <View style={styles.customCollapseContainer}>
+                <RowText
+                  startingText={'Current Value:'}
+                  endNumber={collapseValues.totalCurrentValue.toFixed(2)}
+                  customSpaceToLogo={false}
+                  isEndNumberBold={false}
+                />
 
-              <View style={styles.commonCollapseContainer}>
-                <Text style={styles.commonText}>Total Investment:</Text>
-                <View style={styles.commonCastContainer}>
-                  <Image
-                    source={require('../../Assets/Images/rupee.png')}
-                    style={styles.rupeeImage}
-                  />
-                  <Text style={styles.commonCostText}>
-                    {collapseValues.totalInvestment}
-                  </Text>
-                </View>
-              </View>
+                <RowText
+                  startingText={'Total Investment:'}
+                  endNumber={collapseValues.totalInvestment.toFixed(2)}
+                  customSpaceToLogo={false}
+                  isEndNumberBold={false}
+                />
 
-              <View style={styles.commonCollapseContainer}>
-                <Text style={styles.commonText}>Today's Profit & Loss</Text>
-                <View style={styles.commonCastContainer}>
-                  <Image
-                    source={require('../../Assets/Images/rupee.png')}
-                    style={styles.rupeeImage}
-                  />
-                  <Text style={styles.commonCostText}>
-                    {collapseValues.todayProfitAndLoss}
-                  </Text>
-                </View>
+                <RowText
+                  startingText={`Today's Profit & Loss:`}
+                  endNumber={collapseValues.todayProfitAndLoss.toFixed(2)}
+                  customSpaceToLogo={false}
+                  isEndNumberBold={false}
+                />
               </View>
             </>
           )}
@@ -166,7 +151,7 @@ const StockHoldingScreen = () => {
                 style={styles.rupeeImage}
               />
               <Text style={styles.commonCostText}>
-                {collapseValues.totalProfitAndLoss}
+                {collapseValues.totalProfitAndLoss.toFixed(2)}
               </Text>
             </View>
           </View>

@@ -29,19 +29,26 @@ export const styles = StyleSheet.create({
     height: 20,
     width: 20,
     position: 'absolute',
-    top: height * 0.4 - arrowSize * 0.18,
+    top: height * 0.4 - arrowSize * 0.16,
     left: width / 2 - arrowSize / 2,
   },
   downArrow: {
     height: 20,
     width: 20,
     position: 'absolute',
-    top: height * 0.2 - arrowSize * 0.14,
+    top: height * 0.2 - arrowSize * 0.16,
     left: width / 2 - arrowSize / 2,
   },
   rupeeImage: {
-    height: 24,
-    width: 24,
+    height: 19,
+    width: 19,
+  },
+
+  customCollapseContainer: {
+    paddingHorizontal: 16,
+    display: 'flex',
+    justifyContent: 'space-around',
+    height: height * 0.15,
   },
 
   commonCollapseContainer: {
